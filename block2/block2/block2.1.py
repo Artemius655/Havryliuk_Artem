@@ -1,0 +1,12 @@
+import cv2
+image = cv2.imread('banana.png')
+cv2.imshow('banana', image)
+gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+cv2.imshow("Gray", gray)
+blur = cv2.GaussianBlur(image,(7,7),0 )
+cv2.imshow("Blur", blur)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+cv2.imwrite('banana_copy.png', image)
+cv2.imwrite('banana_copy-gray.png', gray)
+cv2.imwrite('banana_copy-blur.png', blur)

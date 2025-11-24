@@ -1,0 +1,10 @@
+import cv2
+image = cv2.imread('room.png')
+cv2.imshow('room', image)
+gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+blur = cv2.GaussianBlur(gray,(7,7),0 )
+cv2.imshow("Blur-Gray", blur)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+cv2.imwrite('room_copy.jpg', image)
+cv2.imwrite('blur-gray.jpg', blur)
